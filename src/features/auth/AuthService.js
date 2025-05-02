@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// Render बैकएंड URL से कनेक्ट करें
-const API_URL = "https://may1b.onrender.com/api/auth";
+// एनवायरनमेंट वेरिएबल का उपयोग करें
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api/auth";
 
 const login = async ({ email, password }) => {
   const res = await axios.post(`${API_URL}/login`, { email, password });
